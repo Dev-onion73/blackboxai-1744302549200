@@ -218,9 +218,17 @@ function MarksTable({ data }) {
 }
 
 function CourseRow({ data, expanded, onToggle }) {
+    const handleRowClick = () => {
+        onToggle();
+    };
+
     return (
-        <React.Fragment>
-            <tr className="bg-gray-50 hover:bg-gray-100">
+        <Fragment>
+            <tr 
+                onClick={handleRowClick}
+                className="bg-gray-50 hover:bg-gray-100 cursor-pointer transition-colors"
+                style={{ userSelect: 'none' }}
+            >
                 <td className="px-4 py-2 border">{data.slNo}</td>
                 <td className="px-4 py-2 border">{data.classNbr}</td>
                 <td className="px-4 py-2 border">{data.courseCode}</td>
@@ -231,27 +239,21 @@ function CourseRow({ data, expanded, onToggle }) {
                 <td className="px-4 py-2 border">{data.slot}</td>
                 <td className="px-4 py-2 border">{data.courseMode}</td>
                 <td className="px-4 py-2 border text-center">
-                    <button 
-                        onClick={(e) => {
-                            e.preventDefault();
-                            onToggle();
-                        }}
-                        className="text-blue-600 hover:text-blue-800 p-2 rounded-full hover:bg-blue-50 transition-colors"
-                    >
-                        <i className={`fas fa-chevron-${expanded ? 'up' : 'down'} text-lg`}></i>
-                    </button>
+                    <div className="inline-flex items-center justify-center w-8 h-8">
+                        <i className={`fas fa-chevron-${expanded ? 'up' : 'down'} text-blue-600 transform transition-transform duration-200`}></i>
+                    </div>
                 </td>
             </tr>
             {expanded && (
                 <tr>
                     <td colSpan="10" className="p-0 border-b">
-                        <div className="p-4 bg-gray-50">
+                        <div className="p-4 bg-gray-50 border-t border-gray-200">
                             <MarksTable data={data.marks} />
                         </div>
                     </td>
                 </tr>
             )}
-        </React.Fragment>
+        </Fragment>
     );
 }
 
@@ -335,7 +337,7 @@ function MarksView() {
                 <select 
                     value={semester}
                     onChange={(e) => setSemester(e.target.value)}
-                    className="w-full p-2 border rounded-md"
+                    className="w-64 p-2 border rounded-md bg-white shadow-sm"
                 >
                     <option>Winter Semester 2024-25</option>
                 </select>
