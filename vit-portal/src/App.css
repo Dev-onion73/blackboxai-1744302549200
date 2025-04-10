@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
-.App-link {
-  color: #61dafb;
+/* Ensure the app takes full height */
+html, body, #root {
+  height: 100%;
 }
 
-@keyframes App-logo-spin {
+/* Transition for dropdown menus */
+.quick-links-btn i {
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Table styles */
+.table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Animation for expanded rows */
+.expanded-row {
+  animation: expandRow 0.3s ease-out;
+}
+
+@keyframes expandRow {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(-10px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
