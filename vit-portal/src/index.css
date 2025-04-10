@@ -1,13 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.section-card {
+  @apply bg-white p-6 rounded-lg shadow-sm;
+}
+
+.sidebar-section {
+  @apply mb-6;
+}
+
+.sidebar-item {
+  @apply flex items-center space-x-3 hover:bg-gray-50 p-2 rounded-md transition-colors;
+}
+
+.lightning-icon {
+  @apply text-blue-500 w-4;
+}
+
+.badge {
+  @apply bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded;
+}
+
+.quick-links-btn {
+  @apply bg-blue-700 hover:bg-blue-800 px-4 py-2 rounded flex items-center space-x-2 transition-colors;
+}
+
+.header-profile {
+  @apply flex items-center space-x-3 bg-blue-700 hover:bg-blue-800 px-4 py-2 rounded transition-colors;
 }
