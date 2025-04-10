@@ -105,6 +105,55 @@ body {
     text-decoration: underline;
 }
 
+/* Marks View specific styles */
+.marks-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.marks-table th,
+.marks-table td {
+    border: 1px solid #e2e8f0;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.marks-table th {
+    background-color: #1e88e5;
+    color: white;
+    font-weight: 500;
+}
+
+.marks-table tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.marks-table tr:hover {
+    background-color: #f1f5f9;
+}
+
+.expand-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #1e88e5;
+    transition: transform 0.2s ease;
+}
+
+.expand-button:hover {
+    transform: scale(1.1);
+}
+
+.semester-select {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    background-color: white;
+    margin-bottom: 1rem;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
